@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.learning.store_service.entities.User;
 import com.learning.store_service.repositories.UserRepository;
+import com.learning.store_service.services.exceptions.DatabaseException;
 import com.learning.store_service.services.exceptions.ResourceNotFoundException;
 
 @Service
@@ -27,7 +28,11 @@ public class UserService {
 	}
 	
 	public void delete(Long id) {
-		repository.deleteById(id);
+		try {
+			repository.deleteById(id);
+		} catch (RuntimeException e) {
+			throw new DatabaseException(e.getMessage());
+		}
 	}
 	
 	public User update(Long id, User updated) {
