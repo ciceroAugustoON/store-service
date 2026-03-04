@@ -11,13 +11,8 @@ API RESTful desenvolvida em Java 21 com Spring Boot para gerenciamento completo 
 - [Tecnologias Utilizadas](#-tecnologias-utilizadas)
 - [Funcionalidades](#-funcionalidades)
 - [Arquitetura do Projeto](#-arquitetura-do-projeto)
-- [Pré-requisitos](#-pré-requisitos)
 - [Configuração e Instalação](#-configuração-e-instalação)
 - [Endpoints da API](#-endpoints-da-api)
-- [Exemplos de Uso](#-exemplos-de-uso)
-- [Estrutura do Banco de Dados](#-estrutura-do-banco-de-dados)
-- [Contribuição](#-contribuição)
-- [Licença](#-licença)
 
 ## 🎯 Sobre o Projeto
 
@@ -42,3 +37,45 @@ Este projeto consiste em um web service completo para uma loja virtual, desenvol
 ## 📐 Arquitetura do Projeto
 
 O projeto segue os princípios da **Clean Architecture** e **Domain-Driven Design**:
+
+## Configuração e Instalação
+
+Para executar o projeto, tenha garantia de ter o java instalado na máquina. Você pode verificar utilizando o comando no terminal:
+
+```bash
+java --version
+```
+
+Em seguida basta executar o projeto com o comando:
+```bash
+./diretorio/run.sh
+```
+
+## Endpoints da API
+
+Para utilizar os endpoints da API basta conectar o postman ao pronjeto.
+
+### Endpoints
+
+#### Users (/users):
+
+- GET /users - Get all users
+- GET /users/{id} - Get user by ID
+- POST /users - Create user (body: name, phone, email, password)
+- PUT /users/{id} - Update user (body: name, phone, email, password)
+- DELETE /users/{id} - Delete user
+
+#### Orders (/orders):
+
+- GET /orders - Get all orders
+- GET /orders/{id} - Get order by ID
+
+#### Categories (/categories):
+
+- GET /categories - Get all categories
+- GET /categories/{id} - Get category by ID
+
+#### Products (/products):
+
+- GET /products - Get all products
+- GET /products/{id} - Get product by ID

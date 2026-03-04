@@ -1,0 +1,360 @@
+{
+  "info": {
+    "_postman_id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+    "name": "Store Service API",
+    "description": "API collection for the Store Service - a Spring Boot e-commerce application with Users, Orders, Categories, and Products resources.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Get All Users",
+          "id": "f2c218d2-6562-4b8b-90c5-2fc5a5c1b2c9",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/users",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users"
+              ]
+            },
+            "description": "Retrieves a list of all users."
+          },
+          "response": []
+        },
+        {
+          "name": "Get User by ID",
+          "id": "8bcbc957-9c8b-4a11-84cd-37dbcb175e01",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/users/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "id": "a4eba030-ece4-4302-b0fd-16bbe0213a54",
+                  "key": "id",
+                  "value": "1",
+                  "description": "User ID"
+                }
+              ]
+            },
+            "description": "Retrieves a specific user by their ID."
+          },
+          "response": []
+        },
+        {
+          "name": "Create User",
+          "id": "352f6b91-0ae2-4523-bc7a-56d901b73bfa",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"John Doe\",\n    \"phone\": \"555-1234\",\n    \"email\": \"john.doe@example.com\",\n    \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/users",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users"
+              ]
+            },
+            "description": "Creates a new user. Returns the created user with generated ID and Location header."
+          },
+          "response": []
+        },
+        {
+          "name": "Update User",
+          "id": "9bf14272-e7c7-4a31-86f9-61cdeb3f651d",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"John Doe Updated\",\n    \"phone\": \"555-5678\",\n    \"email\": \"john.updated@example.com\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/users/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "id": "549e2191-e6b4-4362-8d5e-1ce8ef3f4007",
+                  "key": "id",
+                  "value": "1",
+                  "description": "User ID"
+                }
+              ]
+            },
+            "description": "Updates an existing user by ID."
+          },
+          "response": []
+        },
+        {
+          "name": "Delete User",
+          "id": "34f08903-0b6c-4a6b-9988-5e122117e6ed",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/users/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "id": "74d0baab-0e47-4805-8c79-9f6013c87a32",
+                  "key": "id",
+                  "value": "1",
+                  "description": "User ID"
+                }
+              ]
+            },
+            "description": "Deletes a user by ID. Returns 204 No Content on success."
+          },
+          "response": []
+        }
+      ],
+      "id": "b6a77310-b313-4ca4-9973-2ea2384af5dc",
+      "description": "User management endpoints"
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "Get All Orders",
+          "id": "8fd1b81b-fcb2-4ac2-8556-5f7c61e32258",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/orders",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "orders"
+              ]
+            },
+            "description": "Retrieves a list of all orders with their items, client info, and payment details."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Order by ID",
+          "id": "9117bf43-ada8-4e1e-b9e3-9a6bc4e86cde",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/orders/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "orders",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "id": "3da221e7-b09f-4aeb-8895-97a77fe13c51",
+                  "key": "id",
+                  "value": "1",
+                  "description": "Order ID"
+                }
+              ]
+            },
+            "description": "Retrieves a specific order by ID including order items, client, payment, and total."
+          },
+          "response": []
+        }
+      ],
+      "id": "ae26a433-a6a6-470a-ac58-9f8ba9ed411d",
+      "description": "Order management endpoints"
+    },
+    {
+      "name": "Categories",
+      "item": [
+        {
+          "name": "Get All Categories",
+          "id": "63b1da3b-205c-4515-bde6-62c6cbd1b749",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/categories",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "categories"
+              ]
+            },
+            "description": "Retrieves a list of all product categories."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Category by ID",
+          "id": "db5c886c-52e9-4542-acac-5d6277a5ab3a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/categories/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "categories",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "id": "5eb76f46-5246-423c-bfef-34c1f44d187b",
+                  "key": "id",
+                  "value": "1",
+                  "description": "Category ID"
+                }
+              ]
+            },
+            "description": "Retrieves a specific category by ID."
+          },
+          "response": []
+        }
+      ],
+      "id": "ce220cf2-26be-4434-8c4a-7728e058a864",
+      "description": "Category management endpoints"
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Get All Products",
+          "id": "dbf55ab9-31ac-48ff-9ad9-645ddf0567c9",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/products",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "products"
+              ]
+            },
+            "description": "Retrieves a list of all products with their categories."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Product by ID",
+          "id": "6363d81c-a65b-4909-b2f4-b5a0bdbca71a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/products/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "products",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "id": "41fbb392-e21d-47db-a0ab-d088351b04d2",
+                  "key": "id",
+                  "value": "1",
+                  "description": "Product ID"
+                }
+              ]
+            },
+            "description": "Retrieves a specific product by ID including name, description, price, imgUrl, and categories."
+          },
+          "response": []
+        }
+      ],
+      "id": "2e65419f-3af4-4d5d-b190-35f41760b6a9",
+      "description": "Product management endpoints"
+    }
+  ],
+  "variable": [
+    {
+      "id": "3dbbb104-f2c4-4f6a-8683-18c0a3165aea",
+      "key": "baseUrl",
+      "value": "http://localhost:8080",
+      "type": "string"
+    }
+  ]
+}
